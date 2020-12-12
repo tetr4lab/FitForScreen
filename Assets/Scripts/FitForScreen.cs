@@ -3,10 +3,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// UI.ImageをCanvasにフィットさせる
-/// Imageは、Canvas中央に中央アンカーで配置されている必要がある。
-/// </summary>
+/// <summary>UI.ImageをCanvasにフィットさせる</summary>
 public class FitForScreen : MonoBehaviour {
 
 	public enum ExpandMethod {
@@ -25,16 +22,24 @@ public class FitForScreen : MonoBehaviour {
 	
 	/// <summary>初期化</summary>
 	private void Awake () {
-		CanvasRect = GetComponentInParent<Canvas> ().GetComponent<RectTransform> ();
-		ImageRect = Image.GetComponent<RectTransform> ();
-		var sprite = Image.sprite;
-		ImageSize = sprite.bounds.size * sprite.pixelsPerUnit;
-		LastMethod = Method;
+		var canvas = GetComponentInParent<Canvas> ();
+		CanvasRect = canvas?.GetComponent<RectTransform> ();
+		if (CanvasRect) {
+			ImageRect = Image.GetComponent<RectTransform> ();
+			ImageRect.anchorMin = ImageRect.anchorMax = ImageRect.pivot = new Vector2 (0.5f, 0.5f);
+			ImageRect.localScale = Vector3.one;
+			ImageRect.localScale = new Vector3 (1f / ImageRect.lossyScale.x, 1f / ImageRect.lossyScale.y, 1f / ImageRect.lossyScale.z) * canvas.scaleFactor;
+			ImageRect.rotation = Quaternion.identity;
+			ImageRect.localPosition = Vector3.zero;
+			var sprite = Image.sprite;
+			ImageSize = sprite.bounds.size * sprite.pixelsPerUnit;
+			LastMethod = Method;
+		}
 	}
 
 	/// <summary>駆動</summary>
 	private void Update () {
-		if (LastCanvasSize != CanvasRect.sizeDelta || LastMethod != Method) {
+		if (CanvasRect && (LastCanvasSize != CanvasRect.sizeDelta || LastMethod != Method)) {
 			LastCanvasSize = CanvasRect.sizeDelta;
 			var narrow = (((float) LastCanvasSize.y / LastCanvasSize.x) <= (ImageSize.y / ImageSize.x));
 			if (Method == ExpandMethod.Stretch) {
