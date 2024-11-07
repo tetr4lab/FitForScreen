@@ -3,7 +3,7 @@ Dynamically fit uGUI Image to the screen. You can select Stretch, Fit, Fill.
 tags: Unity uGUI
 
 # 前提
-- unity 2018.4.30f1で動作確認しました。
+- unity 2022.3.51f1で動作確認しました。
 
 # 「画面にフィットさせる」とは?
 
@@ -25,8 +25,10 @@ RectTransformを、ルートCanvasの外周に沿って拡縮するように設�
 # Fill の実現
 
 ## 使い方
-
-- プロジェクトにアセットをインポートしてください。
+- `Package Manager` > `Add package from git URL...` で以下を入力します。
+```
+https://github.com/tetr4lab/FitForScreen.git?path=/Assets/FitForScreen
+```
 - シーンのオブジェクトに、"FitForScreen"スクリプトをアタッチしてください。
 - インスペクタでImageを設定し、Methodを選んでください。
 - 画面サイズやMethodの変化にも対応しています。

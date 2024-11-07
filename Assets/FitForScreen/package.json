@@ -1,0 +1,22 @@
+{
+    "name": "org.tetr4lab.fitforscreen",
+    "version": "1.0.0",
+    "displayName": "FitForScreen",
+    "description": "Dynamically fit uGUI Image to the screen. You can select Stretch, Fit, Fill.",
+    "unity": "2021.3",
+    "documentationUrl": "https://github.com/tetr4lab/FitForScreen.git?path=/Assets/FitForScreen",
+    "licenses": "MIT",
+    "dependencies": {},
+    "keywords": [
+        "fit",
+        "fill",
+        "stretch",
+        "uGUI",
+        "Unity"
+    ],
+    "author": {
+        "name": "tetr4lab.",
+        "email": "info@tetr4lab.org",
+        "url": "https://tetr4lab.org/"
+    }
+}
