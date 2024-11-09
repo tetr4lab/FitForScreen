@@ -1,6 +1,6 @@
 {
     "name": "org.tetr4lab.fitforscreen",
-    "rootNamespace": "Tetr4lab",
+    "rootNamespace": "Tetr4lab.UI",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
