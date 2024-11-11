@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using Tetr4lab.UI;
+using Tetr4lab.UnityEngine.UI;
 
 public class SwitchPanel : MonoBehaviour {
 

@@ -1,5 +1,5 @@
 {
-    "name": "org.tetr4lab.fitforscreen",
+    "name": "org.tetr4lab.unity.fitforscreen",
     "version": "1.0.0",
     "displayName": "FitForScreen",
     "description": "Dynamically fit uGUI Image to the screen. You can select Stretch, Fit, Fill.",

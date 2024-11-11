@@ -33,7 +33,7 @@ https://github.com/tetr4lab/FitForScreen.git?path=/Assets/FitForScreen
 - インスペクタでImageを設定し、Methodを選んでください。
 - 必要に応じて、以下の名前空間を導入してください。
 ```csharp
-using Tetr4lab.UI;
+using Tetr4lab.UnityEngine.UI;
 ```
 - 画面サイズやMethodの変化にも対応しています。
 - サンプル(SampleScene)も参考にしてください。

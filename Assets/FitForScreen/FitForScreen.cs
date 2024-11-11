@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Tetr4lab.UI {
+namespace Tetr4lab.UnityEngine.UI {
 
     /// <summary>UI.ImageをCanvasにフィットさせる</summary>
     public class FitForScreen : MonoBehaviour {
